@@ -9,8 +9,8 @@ Use it as a component:
 
 	$ npm install -g component
 	$ cd /my/project/directory
-  $ component install bmcmahen/ordered-dictionary
-  $ component build
+	$ component install bmcmahen/ordered-dictionary
+	$ component build
 
 Include the compiled `build/build.js` in your HTML, and access the constructor using:
 
