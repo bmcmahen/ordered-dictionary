@@ -1,0 +1,15 @@
+{
+  "name": "ordered-dictionary",
+  "repo": "bmcmahen/ordered-dictionary",
+  "description": "permits quick lookups (by key) and maintain ordering of objects",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/indexof": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
