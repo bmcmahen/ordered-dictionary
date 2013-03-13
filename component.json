@@ -5,7 +5,8 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "component/indexof": "*"
+    "component/indexof": "*",
+    "component/emitter": "*"
   },
   "development": {},
   "license": "MIT",

@@ -1,5 +1,6 @@
 // Modules
-var indexOf = require('indexof');
+var indexOf = require('indexof'),
+		Emitter = require('emitter');
 
 var OrderedDictonary = function(attr){
 	if (!(this instanceof OrderedDictonary))
@@ -14,6 +15,8 @@ var OrderedDictonary = function(attr){
 
 module.exports = OrderedDictonary;
 
+Emitter(OrderedDictonary.prototype);
+
 // Allow both 'key', 'value' and {key: value} style arguments.
 OrderedDictonary.prototype.set = function(key, val){
 	var attr, attrs;
@@ -24,6 +27,7 @@ OrderedDictonary.prototype.set = function(key, val){
 		else {
 			this.array.push(attr);
 			this.map[attr] = attrs[attr];
+			this.emit('enter', attrs[attr]);
 		}
 	}
 	return this;
@@ -32,6 +36,7 @@ OrderedDictonary.prototype.set = function(key, val){
 OrderedDictonary.prototype.remove = function(key) {
 	var index = indexOf(this.array, key);
 	if (index === -1) throw new Error('Key doesnt exist');
+	this.emit('exit', this.map[key]);
 	this.array.splice(index, 1);
 	delete this.map[key];
 };
