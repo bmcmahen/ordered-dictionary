@@ -27,7 +27,7 @@ OrderedDictonary.prototype.set = function(key, val){
 		else {
 			this.array.push(attr);
 			this.map[attr] = attrs[attr];
-			this.emit('enter', attr, attrs[attr]);
+			this.emit('enter', attrs[attr]);
 		}
 	}
 	return this;
@@ -36,7 +36,7 @@ OrderedDictonary.prototype.set = function(key, val){
 OrderedDictonary.prototype.remove = function(key) {
 	var index = indexOf(this.array, key);
 	if (index === -1) throw new Error('Key doesnt exist');
-	this.emit('exit', key, this.map[key]);
+	this.emit('exit', this.map[key]);
 	this.array.splice(index, 1);
 	delete this.map[key];
 };
