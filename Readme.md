@@ -52,6 +52,20 @@ Sort the ordered dictionary by attribute.
 
 ### .clear()
 
+## Events
+
+### enter
+
+When a new key/value pair is added to the dictionary. For example...
+
+	orderedDict.on('enter', function(key, val){ });
+
+### exit
+
+When a key/value pair has been removed from the dictionary.
+
+	orderedDict.on('exit', function(key, val){ });
+
 ## Example
 
 	var OrderedDictionary = require('bmcmahen-ordered-dictionary');
